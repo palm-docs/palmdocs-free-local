@@ -1,0 +1,24 @@
+
+/* 恢复编辑器内容区域的列表样式 */
+.ProseMirror ul li,
+.aie-content ul li {
+  list-style-type: disc !important;
+  margin-left: 1.5em;
+}
+
+.ProseMirror ol li,
+.aie-content ol li {
+  list-style-type: decimal !important;
+  margin-left: 1.5em;
+}
+
+/* 嵌套列表样式 */
+.ProseMirror ul ul li,
+.aie-content ul ul li {
+  list-style-type: circle !important;
+}
+
+.ProseMirror ol ol li,
+.aie-content ol ol li {
+  list-style-type: lower-alpha !important;
+}
