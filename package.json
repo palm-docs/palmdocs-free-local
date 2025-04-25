@@ -10,7 +10,7 @@
     "build": "vite build",
     "build:tsc": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "deploy:cf-pages": "vite build && wrangler pages deployment create ./dist --project-name palm-docs-local-free",
+    "deploy:cf-pages": "vite build && wrangler pages deployment create ./dist --project-name palmdocs-free-local",
     "deploy:image": "vite build && deploy-image.bash"
   },
   "dependencies": {
