@@ -206,7 +206,7 @@ const init = async () => {
           onChange(editor) {
             throttledChangeHandler(editor.getHtml());
           },
-          toolbarExcludeKeys: ['ai'],
+          // toolbarExcludeKeys: ['ai'],
           ai: {
             // @ts-ignore
             models: {
