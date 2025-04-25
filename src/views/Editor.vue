@@ -200,7 +200,7 @@ const init = async () => {
         aiEditor = new AiEditor({
           draggable: false,
           element: editorRef.value,
-          placeholder: "点击输入内容...",
+          placeholder: "/ 唤起快捷命令，Ctrl + / 唤起智能创作助手",
           content: "",
           documentName: doc.name,
           onChange(editor) {
