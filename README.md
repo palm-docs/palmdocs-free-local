@@ -14,13 +14,15 @@ An ai-powered rich-text editor with simple documents management, for FREE and SA
 
 # pull it
 podman pull crpi-cbqyuxrw2bl506jk.cn-hangzhou.personal.cr.aliyuncs.com/mickeyworks/palmdocs-free-local:latest
-# or build it
-podman build -t palmdocs-free-local .
+# run it
+podman run -d -p 8080:80 --name palmdocs-free-local-container crpi-cbqyuxrw2bl506jk.cn-hangzhou.personal.cr.aliyuncs.com/mickeyworks/palmdocs-free-local:latest
 
+# or
+
+# build it
+podman build -t palmdocs-free-local .
 # run it from local image
 podman run -d -p 8080:80 --name palmdocs-free-local-container localhost/palmdocs-free-local:latest
-# or from remote image in registry
-podman run -d -p 8080:80 --name palmdocs-free-local-container  -d -p 8080:80 --name palmdocs-free-local-container .cn-hangzhou.personal.cr.aliyuncs.com/mickeyworks/palmdocs-free-local:latest
 ```
 
 ---
