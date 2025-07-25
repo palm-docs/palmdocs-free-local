@@ -5,7 +5,7 @@ import ArcoVueIcon from '@arco-design/web-vue/es/icon';
 
 import router from './router'
 import './styles/main.css'
-import 'aieditor/dist/style.css'
+import '../aieditor/dist/style.css'
 
 // 引入bootstrap初始化数据库
 import { Bootstrap } from './utils/bootstrap';

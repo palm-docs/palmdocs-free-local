@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { ref, watch, computed, onMounted, onUnmounted, nextTick } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import { AiEditor } from "aieditor";
+import { AiEditor } from "../../aieditor/dist";
 // import "../../lib/style.css";
 import { DocumentService, type IDocTreeItem } from "../services/IndexedDBService";
 import { Message } from "@arco-design/web-vue";
@@ -195,13 +195,17 @@ const init = async () => {
     if (doc) {
       documentContent.value = doc.content || "";
 
-      if (!aiEditor && editorRef.value) {
+      if (aiEditor) {
+        aiEditor.destroy();
+        aiEditor = null;
+      }
+      if (editorRef.value) {
         const modelConfig = getCurrentModel();
         aiEditor = new AiEditor({
           draggable: false,
           element: editorRef.value,
           placeholder: "/ 唤起快捷命令，Ctrl + / 唤起智能创作助手",
-          content: "",
+          content: documentContent.value,
           documentName: doc.name,
           onChange(editor) {
             throttledChangeHandler(editor.getHtml());
@@ -218,7 +222,7 @@ const init = async () => {
       }
 
       // aiEditor!.setDocName(doc.name);
-      aiEditor!.setContent(documentContent.value);
+      // aiEditor!.setContent(documentContent.value);
 
       // 构建面包屑导航
       await buildBreadcrumbPath(docId.value as string);
